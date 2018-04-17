@@ -1,0 +1,30 @@
+<h3>Donation description</h3>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Donor:</strong>
+  <%= @donation.donor %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @donation.donation_type %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @donation.quantity %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <% unless @donation.animal.blank? %>
+    <%= @donation.animal.name %>
+  <% end %>
+</p>
+
+<hr>
+
+<%= link_to 'Edit', edit_donation_path(@donation), class: "btn btn-secondary" %> |
+<%= link_to 'Back', donations_path, class: "btn btn-secondary" %>

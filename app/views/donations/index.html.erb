@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Listing Donations</h3>
+
+<table class="table table-sm">
+  <thead class="text-center">
+    <tr>
+      <th>Donor</th>
+      <th>Type</th>
+      <th>Quantity</th>
+      <th>Animal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="text-center">
+    <% @donations.each do |donation| %>
+      <tr>
+        <td><%= donation.donor %></td>
+        <td><%= donation.donation_type %></td>
+        <td><%= donation.quantity %></td>
+        <td><% unless donation.animal.blank? %>
+              <%= donation.animal.name %>
+            <% end %>
+        </td>
+        <td><%= link_to 'Show', donation, class: "btn btn-secondary btn-sm btn-block" %></td>
+        <td><%= link_to 'Edit', edit_donation_path(donation), class: "btn btn-secondary btn-sm btn-block" %></td>
+        <td><%= link_to 'Destroy', donation, class: "btn btn-danger btn-sm btn-block", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Donation', new_donation_path, class: "btn btn-primary" %>

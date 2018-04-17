@@ -32,4 +32,42 @@ O repositório deve ser forkado e feito PR com a implementação realizada.
 7. BONUS: Teste unitário e automação de testes
 
 # Como subir a aplicação
-bla, bla e bla
+
+### Get started
+````
+$ git clone https://github.com/mupper-marketing/challenge.git
+$ cd challenge
+````
+#### Configurando o projeto
+Instalar as dependências e configurar o banco:
+```
+$ bin/setup
+```
+Executar os testes:
+```
+$ rspec .
+```
+Subir a aplicação:
+```
+$ rails s
+```
+
+Acessar em: http://localhost:3000
+
+#### Usando Docker
+Construir imagem Docker:
+```
+$ docker build -t challenge/bixano .
+```
+Subir container Docker a partir da imagem criada:
+
+1 -container em background:
+```
+$ docker run -d -p 3000:3000 challenge/bixano
+```
+2 - container em modo interativo(acompanhamento dos logs):
+```
+$ docker run -ti -p 3000:3000 challenge/bixano
+```
+
+Acessar em: http://localhost:3000

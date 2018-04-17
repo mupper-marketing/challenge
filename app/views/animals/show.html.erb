@@ -1,0 +1,65 @@
+<h3>Animal description</h3>
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col text-center">
+    <%= image_tag @animal.avatar, class: "img-thumbnail" %>
+  </div>
+  <div class="col">
+    <p>
+    <strong>Name:</strong>
+    <%= @animal.name %>
+  </p>
+  
+  <p>
+    <strong>Age:</strong>
+    <%= @animal.age %>
+  </p>
+  
+  <p>
+    <strong>Specie:</strong>
+    <%= @animal.specie %>
+  </p>
+  
+  <p>
+    <strong>Breed:</strong>
+    <%= @animal.breed %>
+  </p>
+  
+  <p>
+    <strong>Obs:</strong>
+    <%= @animal.obs %>
+  </p>
+  </div>
+</div>
+
+<br><br>
+
+<table class="table table-sm">
+  <thead class="text-center">
+    <tr>
+      <th>Dt</th>
+      <th>Animal</th>
+      <th>Vet</th>
+      <th>Obs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="text-center">
+    <% @attendances.each do |attendance| %>
+      <tr>
+        <td><%= attendance.dt %></td>
+        <td><%= attendance.animal.name %></td>
+        <td><%= attendance.vet.name %></td>
+        <td><%= attendance.obs %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<%= link_to 'Edit', edit_animal_path(@animal), class: "btn btn-secondary" %> |
+<%= link_to 'Back', animals_path, class: "btn btn-secondary" %>

@@ -1,0 +1,28 @@
+<h3>Vet description</h3>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vet.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @vet.phone %>
+</p>
+
+<p>
+  <strong>Crv:</strong>
+  <%= @vet.crv %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @vet.address %>
+</p>
+
+<hr>
+
+<%= link_to 'Edit', edit_vet_path(@vet), class: "btn btn-secondary" %> |
+<%= link_to 'Back', vets_path, class: "btn btn-secondary" %>
