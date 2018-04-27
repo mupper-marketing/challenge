@@ -1,35 +1,18 @@
 # Coding Challenge
 
-Utilizando o framework Rails desenvolva:
+Requisitos:
 
-1. Utilizando o framework Rails crie um sistema para uma ong de animais;
-2. O sistema terá que ter acesso somente por usuários autenticados;
-3. Esse sistema deve ter os seguintes CRUDS:
-  * Animais - listagem, cadastro, edição e remoção
-  * Doações - listagem, cadastro, edição e remoção
-  * Veterinários - listagem, cadastro, edição e remoção
-  * Usuários administrativos - listagem, cadastro, edição e remoção
-  * Histórico de atendimento do animal - listagem, cadastro
-4. Regras:
-  * Animais (nome, imagem, idade, espécie, raça, observação) - observação pode ser nula, imagem somente png ou jpg
-  * Doações (dados do doador, tipo, quantidade) - tipo pode ser somente ração ou medicamentos, doação pode ser especifica para um animal ou não
-  * Veterinários (nome, telefone, crv, endereço)
-  * Histórico de atendimento (data, animal, veterinário, observação) - todos os campos são obrigatórios. Deve ser apresentado apenas na tela de edição do animal.
-5. Escrever o COMO SUBIR A APLICAÇÃO abaixo;
+1. PHP >= 7.2
+2. Composer
 
-```
-O repositório deve ser forkado e feito PR com a implementação realizada.
-```
+Instalação
 
-# Critério de avalição
-
-1. Entender os conceitos de OO, framework e linguagem
-2. Code design
-3. Habilidade de escrever boa documentação
-4. Error handling 
-5. BONUS: build e/ou deploy scripts
-6. BONUS: Docker script 
-7. BONUS: Teste unitário e automação de testes
-
-# Como subir a aplicação
-bla, bla e bla
+1. Clone o repositório
+2. Na pasta do projeto rode o comando "composer install" para instalar todas as dependencias do Laravel
+3. Crie um banco de dados e na pasta raiz do projeto contém um arquivo sql chamado mupper.sql, rode ele em seu banco de dados criado:
+4. Altere o arquivo .env com os dados do banco que vc criou no passo anterior na seção do mysql
+5. Rode o comando "php artisan serve" para subir o projeto e acesse 127.0.0.1:8000, ou coloque ele em sua pasta www de qualquer servidor php
+6. O usuário e senha padrão é:
+  user: admin@admin.com
+  senha: admin
+7. Caso deseje adicionar um novo administrador, basta acessar a url 127.0.0.1:8000/register
